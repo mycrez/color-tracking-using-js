@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from facial-detect.herokuapp.com/colours by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jul 2019 06:36:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <title>tracking.js - color with camera</title>
+  <link rel="stylesheet" href="examples/assets/demo.css">
+
+  <script src="build/tracking-min.js"></script>
+  <script src="dat.gui/build/dat.gui.min.js"></script>
+  <script src="examples/assets/stats.min.js"></script>
+  <script src="examples/assets/color_camera_gui.js"></script>
+
+  <style>
+  video, canvas {
+    margin-left: 100px;
+    margin-top: 35px;
+    position: absolute;
+  }
+  </style>
+</head>
+<body>
+  <div class="demo-title">
+    <p>Use the box to pick colours you want to detect</p>
+  </div>
+
+  <div class="demo-frame">
+
+
+    <div class="demo-container">
+      <video id="video" width="600" height="450" preload autoplay loop muted controls></video>
+      <canvas id="canvas" width="600" height="450"></canvas>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      var video = document.getElementById('video');
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+
+      var tracker = new tracking.ColorTracker();
+
+      tracking.track('#video', tracker, { camera: true });
+
+  
+        });
+      });
+
+     initGUIControllers(tracker);
+    };
+  </script>
+
+</body>
+
+<!-- Mirrored from facial-detect.herokuapp.com/colours by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jul 2019 06:36:41 GMT -->
+</html>
